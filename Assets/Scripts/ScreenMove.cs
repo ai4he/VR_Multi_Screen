@@ -192,7 +192,7 @@ public class ScreenMove : MonoBehaviour
     public XRController leftHandController;
     public LayerMask screenLayer; // Layer of the screen
     public float moveSpeed = 0.07f; // Adjust to set the speed of the screen movement
-    public float rotationSpeed = 0.01f; // Adjust to set the speed of the screen rotation
+    //public float rotationSpeed = 0.01f; // Adjust to set the speed of the screen rotation
 
     private Vector3 lastRightPosition;
     private Vector3 lastLeftPosition;
@@ -254,48 +254,51 @@ public class ScreenMove : MonoBehaviour
 
 
 
-    void Rotate()
-    {
-        // Check if left controller is pointing
-        if (CheckifLeftControllersPointing())
-        {
-            if (leftHandController.inputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 leftThumbstick) && leftThumbstick.x != 0)
-            {
-                // Rotate based on left thumbstick horizontal movement
-                transform.Rotate(Vector3.up, leftThumbstick.x * rotationSpeed, Space.Self);
+    // void Rotate()
+    // {
+    //     // Check if left controller is pointing
+    //     if (CheckifLeftControllersPointing())
+    //     {
+    //         if (leftHandController.inputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 leftThumbstick) && leftThumbstick.x != 0)
+    //         {
+    //             // Rotate based on left thumbstick horizontal movement
+    //             transform.Rotate(Vector3.up, leftThumbstick.x * rotationSpeed, Space.Self);
                 
-            }
-        }
+    //         }
+    //     }
 
-        // Check if right controller is pointing
-        if (CheckifRightControllersPointing())
-        {
-            if (rightHandController.inputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 rightThumbstick) && rightThumbstick.x != 0)
-            {
-                // Rotate based on right thumbstick horizontal movement
-                transform.Rotate(Vector3.up, rightThumbstick.x * rotationSpeed, Space.Self);
+    //     // Check if right controller is pointing
+    //     if (CheckifRightControllersPointing())
+    //     {
+    //         if (rightHandController.inputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 rightThumbstick) && rightThumbstick.x != 0)
+    //         {
+    //             // Rotate based on right thumbstick horizontal movement
+    //             transform.Rotate(Vector3.up, rightThumbstick.x * rotationSpeed, Space.Self);
                 
-            }
-        }
-    }
+    //         }
+    //     }
+    // }
 
-    private bool CheckifLeftControllersPointing(){
+    // private bool CheckifLeftControllersPointing(){
 
-        bool isLeftPointing = Physics.Raycast(leftHandController.transform.position, leftHandController.transform.forward, out RaycastHit leftHit, Mathf.Infinity, screenLayer);
+    //     bool isLeftPointing = Physics.Raycast(leftHandController.transform.position, leftHandController.transform.forward, out RaycastHit leftHit, Mathf.Infinity, screenLayer);
         
-        return isLeftPointing && leftHit.transform == transform;
+    //     return isLeftPointing && leftHit.transform == transform;
 
-    }
-
-
-    private bool CheckifRightControllersPointing(){
+    // }
 
 
-        bool isRightPointing = Physics.Raycast(rightHandController.transform.position, rightHandController.transform.forward, out RaycastHit rightHit, Mathf.Infinity, screenLayer);
-        return isRightPointing && rightHit.transform == transform;
-    }
+    // private bool CheckifRightControllersPointing(){
+
+
+    //     bool isRightPointing = Physics.Raycast(rightHandController.transform.position, rightHandController.transform.forward, out RaycastHit rightHit, Mathf.Infinity, screenLayer);
+    //     return isRightPointing && rightHit.transform == transform;
+    // }
 
     
 }
+
+
+
 
 

@@ -9,7 +9,7 @@ public class ScreenManager : MonoBehaviour
     public GameObject screenPrefab;
     public GameObject screensContainer;
     //   public string host = "10.121.36.229";
-    public string host = "198.21.172.7";
+    public string host = "198.21.169.154";
     public int basePort = 9999;
     private Dictionary<int, ScreenReceiver> screens = new Dictionary<int, ScreenReceiver>();
 

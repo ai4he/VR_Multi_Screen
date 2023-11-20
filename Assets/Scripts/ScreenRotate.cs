@@ -147,6 +147,19 @@
 //     }
 
 // }
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+///
+
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
@@ -156,56 +169,13 @@ public class ScreenRotate : MonoBehaviour
     public XRController leftHandController;
     public XRController rightHandController;
     public LayerMask screenLayer; // Layer of the screen
-    public float rotationSpeed = 1f;
+    public float rotationSpeed = 20f;
     private float initialHandDistance;
     private Vector3 initialScale;
     private bool scalingMode = false;
    
 
-    // void Update()
-    // {
 
-        
-    //     // Check if both controllers are pointing at the screen
-    //     if (CheckIfBothControllersPointing())
-    //     {
-    //         // Detect grip button pressed on both controllers
-    //         if (leftHandController.inputDevice.TryGetFeatureValue(CommonUsages.triggerButton, out bool leftTriggerPressed)
-    //             && rightHandController.inputDevice.TryGetFeatureValue(CommonUsages.triggerButton, out bool rightTriggerPressed))
-    //         {
-    //             if (leftTriggerPressed && rightTriggerPressed)
-    //             {
-    //                 // Begin scaling
-    //                 if (!scalingMode)
-    //                 {
-    //                     scalingMode = true;
-    //                     initialHandDistance = Vector3.Distance(leftHandController.transform.position, rightHandController.transform.position);
-    //                     initialScale = transform.localScale;
-    //                 }
-
-    //                 // Continue scaling
-    //                 else
-    //                 {
-    //                     float currentHandDistance = Vector3.Distance(leftHandController.transform.position, rightHandController.transform.position);
-    //                     float scaleRatio = currentHandDistance / initialHandDistance;
-    //                     transform.localScale = initialScale * scaleRatio;
-    //                 }
-    //             }
-
-    //             // End scaling
-    //             else
-    //             {
-    //                 scalingMode = false;
-    //             }
-    //         }
-    //     }
-    //     else
-    //     {
-    //         scalingMode = false;
-    //     }
-
-        
-    // }
     void Update()
     {
         // Check if both controllers are pointing at the screen
@@ -261,3 +231,5 @@ public class ScreenRotate : MonoBehaviour
     
    
 }
+
+
